@@ -67,6 +67,10 @@ class AddMovieForm(FlaskForm):
     submit = SubmitField("Add Movie")
 
 
+with app.app_context():
+    db.create_all()
+
+
 @app.route("/")
 def home():
     movies = db.session.execute(db.select(Movies).order_by(Movies.rating.desc()))
