@@ -125,7 +125,7 @@ def find():
             title=data["original_title"],
             year=int(data["release_date"][:4]),
             description= data["overview"],
-            img_url=f"https://image.tmdb.org/t/p/w780/{data["poster_path"]}"
+            img_url=f"https://image.tmdb.org/t/p/w780/{data['poster_path']}"
         )
         db.session.add(movieAdded)
         db.session.commit()
