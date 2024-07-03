@@ -106,7 +106,7 @@ def add():
     form = AddMovieForm()
     if form.validate_on_submit():
         movieName = str(form.movieTitle.data)
-        url = f"https://api.themoviedb.org/3/search/movie?query={movieName.replace(" ", "+")}&api_key={API_KEY}"
+        url = f"https://api.themoviedb.org/3/search/movie?query={movieName.replace(' ', '+')}&api_key={API_KEY}"
         r = requests.get(url)
         data = r.json()["results"]
         return render_template("select.html", options=data)
